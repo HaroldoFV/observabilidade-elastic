@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>User Management</h1>
+      <form id="userForm">
+        <input
+          type="text"
+          id="userName"
+          placeholder="Enter user name"
+          required
+        />
+        <button type="submit">Add User</button>
+      </form>
+      <h2>Users List</h2>
+      <ul id="usersList"></ul>
+    </div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

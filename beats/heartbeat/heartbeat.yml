@@ -1,0 +1,29 @@
+heartbeat.monitors:
+  - type: http
+    schedule: "@every 5s"
+    urls:
+      - http://elasticsearch:9200
+      - http://kibana:5601
+      - http://app:8000
+
+  - type: icmp
+    schedule: "@every 5s"
+    hosts:
+      - elasticsearch
+      - kibana
+      - apm
+      - metricbeat
+
+output.elasticsearch:
+  hosts: ["elasticsearch:9200"]
+  username: "elastic"
+  password: "changeme"
+
+setup.kibana:
+  host: "kibana:5601"
+
+setup.dashboards.enabled: false
+
+# Adicione estas linhas para evitar problemas de permissão
+setup.template.overwrite: true
+setup.ilm.check_exists: false
